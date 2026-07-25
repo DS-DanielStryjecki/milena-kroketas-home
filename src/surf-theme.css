@@ -1,0 +1,272 @@
+:root {
+  --lime: #66dfcb;
+  --card: #174653;
+  --muted: #a8c8c9;
+  --line: #2b6470;
+  color: #f7fbfa;
+  background: #102f3a;
+}
+
+body {
+  background:
+    radial-gradient(circle at 82% -4%, rgba(102, 223, 203, .22), transparent 31%),
+    radial-gradient(circle at 0 42%, rgba(50, 139, 156, .16), transparent 35%),
+    linear-gradient(180deg, #123744 0%, #0d2c37 100%);
+  background-attachment: fixed;
+}
+
+header {
+  background: rgba(14, 46, 57, .88);
+  border-bottom-color: rgba(166, 231, 222, .12);
+}
+
+.mark {
+  background: linear-gradient(145deg, #66dfcb, #a1ecda);
+  color: #12343e;
+  box-shadow: 0 7px 20px rgba(102, 223, 203, .18);
+}
+
+.icon { background: #174653; color: #d7efec; }
+.progress { background: #245563; }
+.progress i { box-shadow: 0 0 14px rgba(102, 223, 203, .35); }
+
+.readiness {
+  background: linear-gradient(135deg, rgba(102, 223, 203, .12), rgba(23, 70, 83, .72));
+  border-color: rgba(102, 223, 203, .28);
+}
+
+.start, .finish {
+  background: linear-gradient(135deg, #66dfcb, #a1ecd9);
+  color: #10323b;
+  box-shadow: 0 10px 25px rgba(59, 183, 169, .17);
+}
+
+.exercise {
+  background: linear-gradient(145deg, rgba(27, 79, 92, .96), rgba(20, 62, 75, .96));
+  box-shadow: 0 8px 24px rgba(6, 31, 38, .12);
+}
+
+.check { background: #205361; border-color: #397381; color: #b8d8d8; }
+.done .check { background: #66dfcb; border-color: #66dfcb; color: #10323b; }
+.rest-btn, .load button { background: #205361; color: #d4ebea; }
+.details { border-top-color: rgba(150, 214, 211, .17); }
+.details > p { color: #c6dfde; }
+.detail-grid span, .load > div { background: #103540; }
+.detail-grid small, .load small { color: #80aeb0; }
+
+.finish-card {
+  background: linear-gradient(145deg, #1a4c59, #123844);
+}
+.rating button { background: #245765; color: #9fc3c4; }
+.rating button.active { background: #f2d9a6; color: #173945; }
+.finish-card textarea { background: #103540; }
+
+.day-number { background: #245765; }
+.day-number.done, .empty button { background: #66dfcb; color: #10323b; }
+.history-icon { background: #205b66; color: #66dfcb; }
+.stats div, .principles p, .day-card { background: rgba(23, 70, 83, .92); }
+
+.reset {
+  border-color: rgba(255, 139, 114, .42);
+  background: rgba(125, 52, 47, .22);
+  color: #ffad99;
+}
+
+.timer {
+  background: linear-gradient(135deg, #f6e4bd, #bfe9df);
+  color: #153743;
+}
+.timer button { background: rgba(21, 55, 67, .12); }
+.timer > div > span {
+  max-width: 190px;
+  overflow: hidden;
+  color: rgba(21, 55, 67, .72);
+  font-size: 9px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+nav {
+  background: rgba(12, 40, 50, .96);
+  border-top-color: rgba(125, 183, 186, .2);
+}
+nav button { color: #7ea6a8; }
+
+.modal { background: rgba(5, 28, 35, .78); }
+.modal > div { background: #174653; }
+.close { background: #245765; }
+
+nav {
+  grid-template-columns: repeat(5, 1fr);
+  padding-inline: 6px;
+}
+
+.exercise-library {
+  display: grid;
+  gap: 10px;
+}
+
+.guide-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(27, 79, 92, .98), rgba(20, 62, 75, .98));
+}
+
+.guide-head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 20px;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+}
+
+.guide-head img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid rgba(102, 223, 203, .45);
+}
+
+.guide-head span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.guide-head small {
+  color: var(--lime);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.guide-head b {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.guide-head > svg {
+  width: 18px;
+  color: #8ab6b7;
+  transition: transform .2s;
+}
+
+.guide-card.open .guide-head > svg {
+  transform: rotate(90deg);
+}
+
+.phase-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  padding: 0 10px 12px;
+  border-top: 1px solid rgba(150, 214, 211, .17);
+}
+
+.phase-strip figure {
+  min-width: 0;
+  margin: 10px 0 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #103540;
+}
+
+.phase-strip figure > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #f7f1e4;
+}
+
+.phase-strip figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+}
+
+.phase-strip figcaption b {
+  color: #f2d9a6;
+  font-size: 8px;
+  letter-spacing: .8px;
+}
+
+.phase-strip figcaption span {
+  color: #c6dfde;
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.guide-cue {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 2px 0 0;
+  padding: 10px;
+  border-radius: 11px;
+  background: rgba(102, 223, 203, .1);
+  color: #d6e9e7;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.guide-cue svg {
+  width: 15px;
+  flex: none;
+  color: var(--lime);
+}
+
+/* Kroketas exercise thumbnails */
+.exercise {
+  grid-template-columns: 43px 58px minmax(0, 1fr) auto;
+  min-height: 82px;
+}
+
+.exercise-art {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 13px;
+  border: 2px solid rgba(102, 223, 203, .5);
+  background: #f7f1e4;
+  box-shadow: 0 5px 14px rgba(4, 29, 35, .2);
+}
+
+.exercise-main {
+  min-width: 0;
+  padding-left: 9px;
+}
+
+.exercise-main b,
+.exercise-main span {
+  overflow-wrap: anywhere;
+}
+
+.details {
+  grid-column: 3 / 5;
+  margin-left: 9px;
+}
+
+@media (max-width: 380px) {
+  .exercise {
+    grid-template-columns: 38px 50px minmax(0, 1fr) auto;
+    padding: 10px;
+  }
+
+  .exercise-art {
+    width: 46px;
+    height: 46px;
+  }
+}
